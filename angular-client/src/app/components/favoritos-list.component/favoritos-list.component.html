@@ -1,0 +1,20 @@
+<strong>{{title}}</strong>
+
+<ul>
+    <li *ngFor="let favorito of favoritos" class="favorito-item">
+        <h4>{{favorito.title}}</h4>
+        <p>{{favorito.description}}</p>
+        <p>
+            <a href="http://{{favorito.url}}" class="btn btn-default">Ir al marcador</a>
+        </p>
+        <p>
+            <a [routerLink]="['/detail', 'favorito._id']" href="" class="btn btn-ver">Ver</a>
+        </p>
+        <p>
+            <a href="" class="btn btn-editar">Editar</a>
+        </p>
+        <p>
+            <a href="" class="btn btn-eliminar">Eliminar</a>
+        </p>
+    </li>
+</ul>

@@ -1,0 +1,22 @@
+header {
+    color: white !important;
+    background: #229138;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white !important;
+    margin-bottom: 5px;
+}
+
+.main,
+footer {
+    padding: 14px;
+}
+
+footer {
+    text-align: center;
+}
