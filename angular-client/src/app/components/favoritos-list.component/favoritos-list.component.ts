@@ -12,18 +12,28 @@ import { Favorito } from '../../models/favorito';
 })
 export class FavoritosListComponent implements OnInit {
     public title: string;
+    public loading: boolean;
     public favoritos: Favorito[];
     public errorMessage: any;
-    constructor(private _favoritoService: FavoritoService) {
+    public confirmado;
+    constructor(
+        private _favoritoService: FavoritoService,
+        private _route: ActivatedRoute,
+        private _router: Router
+    ) {
         this.title = 'Listado de marcadores:';
+        this.loading = true;
     }
 
     ngOnInit() {
-        console.log("FavoritosListComponent cargado!!");
+        this.getFavoritos();
+    }
+
+    getFavoritos() {
         this._favoritoService.getFavoritos().subscribe(
             result => {
-                console.log(result);
                 this.favoritos = result.favoritos;
+                this.loading = false;
             },
             error => {
                 if (this.errorMessage != null) {
@@ -34,4 +44,30 @@ export class FavoritosListComponent implements OnInit {
         );
     }
 
+    onBorrarConfirm(id) {
+        this.confirmado = id;
+    }
+
+    onCancelarConfirm() {
+        this.confirmado = null;
+    }
+
+    onBorrarFavorito(id) {
+        this._favoritoService.deleteFavorito(id).subscribe(
+            result => {
+
+                if (!result.message) {
+                    alert('Error en la petición');
+                } else {
+                    this.getFavoritos();
+                }
+
+            },
+            error => {
+                if (this.errorMessage != null) {
+                    console.log(this.errorMessage);
+                    alert('Error en la petición');
+                }
+            }
+    }
 }

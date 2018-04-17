@@ -7,12 +7,16 @@ import { appRoutingProviders, routing } from './routing/app.routing';
 import { AppComponent } from './components/home.component/home.component';
 import { FavoritosListComponent } from './components/favoritos-list.component/favoritos-list.component';
 import { DetailComponent } from './components/detail.component/detail.component';
+import { AddFavoritoComponent } from './components/favorito-add.component/favorito-add.component';
+import { EditFavoritoComponent } from './components/favorito-edit.component/favorito-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FavoritosListComponent,
-    DetailComponent
+    DetailComponent,
+    AddFavoritoComponent,
+    EditFavoritoComponent
   ],
   imports: [
     BrowserModule,

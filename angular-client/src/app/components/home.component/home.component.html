@@ -1,8 +1,11 @@
 <header>
-    <h1>
-        {{ title }}!
-    </h1>
-    <p>{{description}}</p>
+    <a class="btn-crearMarcador" [routerLink]="['crear-marcador']">Crear marcador</a>
+    <a [routerLink]="[ '/']">
+        <h1>
+            {{ title }}!
+        </h1>
+        <p>{{description}}</p>
+    </a>
 </header>
 <section class="main">
     <router-outlet></router-outlet>

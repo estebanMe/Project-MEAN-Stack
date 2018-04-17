@@ -1,1 +1,10 @@
 <h2>Detalle</h2>
+<div *ngIf="favorito">
+    <ul>
+        <li>
+            <h2>{{favorito.title}}</h2>
+            <p>{{favorito.description}}</p>
+            <p>{{favorito.url}}</p>
+        </li>
+    </ul>
+</div>

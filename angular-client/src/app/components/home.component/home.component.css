@@ -12,6 +12,17 @@ header h1 {
     margin-bottom: 5px;
 }
 
+header a {
+    text-decoration: none;
+    color: white !important;
+}
+header .btn-crearMarcador {
+    float: right;
+    padding: 10px;
+    background: white;
+    color: black !important;
+    font-size: 0.9em !important;
+}
 .main,
 footer {
     padding: 14px;
